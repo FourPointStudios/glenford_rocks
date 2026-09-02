@@ -154,6 +154,12 @@ function App() {
             <h2 id="story-title">More than a workshop.</h2>
             <p>Glenford Rocks began as both a range of outdoor furnishings and a vision for a future earth-sculpture park: a working landscape where local quarry history, functional art and the land itself meet.</p>
             <p>The long view is a place where visitors can encounter sculpture, learn about the region's bluestone history and see new work emerge from the quarry.</p>
+            <img
+              className="legacy-artwork"
+              src="/images/original-stone-background.jpg"
+              alt="Original Glenford Rocks wordmark over a wall of stacked local bluestone"
+              loading="lazy"
+            />
             <div className="story-facts" aria-label="Glenford Rocks facts">
               <span><Mountain size={20} aria-hidden="true" /> Hudson Valley bluestone</span>
               <span><MapPin size={20} aria-hidden="true" /> Glenford, New York</span>

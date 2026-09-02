@@ -440,6 +440,15 @@ p {
   color: #d8ded9;
 }
 
+.legacy-artwork {
+  width: min(100%, 610px);
+  height: 210px;
+  margin-top: 12px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 .story-facts {
   display: grid;
   gap: 12px;
@@ -856,6 +865,10 @@ p {
 
   .story-copy {
     padding: 70px 18px;
+  }
+
+  .legacy-artwork {
+    height: 180px;
   }
 
   .process-grid {
