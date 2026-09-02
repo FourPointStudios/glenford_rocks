@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glenfordrocks.com/sitemap.xml
