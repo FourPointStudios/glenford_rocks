@@ -788,6 +788,23 @@ p {
   }
 }
 
+@media (max-width: 900px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-1,
+  .collection-2,
+  .collection-3,
+  .collection-4 {
+    grid-column: auto;
+  }
+
+  .collection {
+    min-height: 580px;
+  }
+}
+
 @media (max-width: 680px) {
   html {
     scroll-padding-top: 76px;
