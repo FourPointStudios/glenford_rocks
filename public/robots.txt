@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://glenfordrocks.com/sitemap.xml
+Sitemap: https://glenfordrock.com/sitemap.xml
