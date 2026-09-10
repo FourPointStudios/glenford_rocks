@@ -265,8 +265,19 @@ p {
   display: flex;
   align-items: flex-end;
   isolation: isolate;
+  overflow: hidden;
   color: var(--white);
-  background: url('/images/original-stone-background.jpg') center / cover no-repeat;
+  background: var(--forest);
+}
+
+.hero-wall-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .hero-overlay {
@@ -1139,6 +1150,41 @@ p {
 }
 
 @media (max-width: 900px) {
+  .hero {
+    min-height: 0;
+    height: auto;
+    max-height: none;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: stretch;
+  }
+
+  .hero-wall-image {
+    position: relative;
+    inset: auto;
+    z-index: auto;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-content {
+    grid-row: 2;
+    padding-top: 52px;
+    padding-bottom: 58px;
+  }
+
+  .hero-caption {
+    display: none;
+  }
+
   .collection-grid {
     grid-template-columns: 1fr;
   }
@@ -1213,21 +1259,17 @@ p {
   }
 
   .hero {
-    min-height: 650px;
-    height: calc(100vh - 144px);
-    align-items: flex-end;
-    background-position: 35% center;
-  }
-
-  .hero-overlay {
-    background: rgba(12, 17, 14, 0.66);
+    min-height: 0;
+    height: auto;
   }
 
   .hero-content {
-    padding-bottom: 66px;
+    padding-top: 34px;
+    padding-bottom: 40px;
   }
 
   .hero-lede {
+    margin-bottom: 24px;
     font-size: 1.02rem;
   }
 
@@ -1238,10 +1280,6 @@ p {
 
   .button {
     width: 100%;
-  }
-
-  .hero-caption {
-    display: none;
   }
 
   .resources-hero {

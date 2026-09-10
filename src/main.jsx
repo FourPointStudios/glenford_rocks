@@ -84,6 +84,14 @@ function App() {
 
       <main id="main-content">
         <section className="hero" id="top" aria-labelledby="hero-title">
+          <img
+            className="hero-wall-image"
+            src="/images/original-stone-background.jpg"
+            alt="Glenford Rocks wordmark over a wall of stacked Hudson Valley bluestone"
+            width="1008"
+            height="707"
+            fetchpriority="high"
+          />
           <div className="hero-overlay" />
           <div className="hero-content page-shell">
             <p className="eyebrow">Bluestone Furniture</p>
