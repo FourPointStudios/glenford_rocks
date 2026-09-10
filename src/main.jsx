@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   ArrowDown,
   ArrowRight,
   Mail,
   MapPin,
-  Menu,
   Mountain,
   Phone,
   Trees,
-  X,
 } from 'lucide-react'
+import { MarketStrip, SiteFooter, SiteHeader } from './SiteChrome'
 import './styles.css'
 
 const furniture = [
@@ -77,51 +76,11 @@ const missionParagraphs = [
 ]
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const closeMenu = () => setMenuOpen(false)
-
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
-
-      <div className="market-strip" aria-label="Contact Glenford Rocks">
-        <a href="mailto:glenfordsales@hotmail.com">
-          <Mail size={20} aria-hidden="true" />
-          <span>glenfordsales@hotmail.com</span>
-        </a>
-        <span className="contact-divider" aria-hidden="true" />
-        <a href="tel:+18456797555">
-          <Phone size={20} aria-hidden="true" />
-          <span>845.679.7555</span>
-        </a>
-      </div>
-
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Glenford Rocks home" onClick={closeMenu}>
-          <span className="brand-name">Glenford Rocks</span>
-          <span className="brand-line">Hudson Valley bluestone</span>
-        </a>
-
-        <button
-          className="menu-button"
-          type="button"
-          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
-          aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
-
-        <nav className={menuOpen ? 'primary-nav is-open' : 'primary-nav'} id="primary-navigation" aria-label="Primary navigation">
-          <a href="#work" onClick={closeMenu}>Furniture</a>
-          <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#future" onClick={closeMenu}>Future</a>
-          <a href="#mission" onClick={closeMenu}>Mission</a>
-          <a className="nav-cta" href="#contact" onClick={closeMenu}>Contact</a>
-        </nav>
-      </header>
+      <MarketStrip />
+      <SiteHeader currentPage="home" />
 
       <main id="main-content">
         <section className="hero" id="top" aria-labelledby="hero-title">
@@ -285,20 +244,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="page-shell footer-grid">
-          <div>
-            <strong>Glenford Rocks</strong>
-            <span>Bluestone furniture and functional art</span>
-          </div>
-          <div>
-            <span>Glenford, New York</span>
-            <a href="mailto:glenfordsales@hotmail.com">glenfordsales@hotmail.com</a>
-            <a href="tel:+18456797555">845.679.7555</a>
-          </div>
-          <p>&copy; {new Date().getFullYear()} Glenford Rocks</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   )
 }
